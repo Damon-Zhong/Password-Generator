@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -23,12 +23,39 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
+
+          <!-- display when click generate password -->
+            <div id="criteria">
+                <!-- select password length -->
+                <div class="slidecontainer">
+                    <input type="range" min="8" max="128" value="68" class="slider" id="charNum">
+                    <p>Password Length: <span id="passwordLength"></span></p>
+                    
+                </div>
+                <hr/>
+                <!-- select character types-->
+                <p>Please select at least one of the following character types:</p>
+        
+                <label for="lowercase">Lowercase:</label> 
+                <input type="checkbox" id="lowercase"><br/>
+                
+                <label for="uppercase">Uppercase:</label> 
+                <input type="checkbox" id="uppercase"><br/>
+        
+                <label for="numeric">Numbers:</label> 
+                <input type="checkbox" id="numeric"><br/>
+        
+                <label for="specialChar">Special Characters:</label> 
+                <input type="checkbox" id="specialChar"><br/>
+        
+                <button type="submit" class="btn btn-primary" onclick="CheckBox()">Submit</button>
+          </div>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>
