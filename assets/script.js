@@ -17,6 +17,7 @@ function CheckBox() {
   document.getElementById("specialChar").checked == true
   ){
           document.getElementById("criteria").style.display = "none";
+          document.getElementById("password").style.display = "block";
       } else {
           alert(`None of character types is selected, please select at least one.`);
       }
@@ -27,7 +28,10 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  document.getElementById("password").style.display = "none";
+  document.getElementById("criteria").style.display = "block";
+
+  passwordText.value = `${output.value}`;
 
 }
 
@@ -36,6 +40,7 @@ generateBtn.addEventListener("click", writePassword);
 
 //
 function generatePassword(){
-  var 
+
+
 }
 
