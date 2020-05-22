@@ -39,7 +39,7 @@ function expandCharset(){
     var lowercasechar = "abcdefghijklmnopqrstuvwxyz";
     var uppercasechar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var number = "0123456789";
-    var specialchar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    var specialchar = "\ \\\"!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
     if(document.getElementById("lowercase").checked == true){
         charset += lowercasechar;
       }
@@ -74,21 +74,15 @@ function writePassword() {
 function generatePassword(){
   var pwset = "";
   var charset = expandCharset();
-  
-  // 
-  
+
   for (i=0; i<slider.value; i++){
     
     var randomchar = charset[Math.round(Math.random()*charset.length)];
     pwset += randomchar;
-    console.log(randomchar);
   }
 
   document.getElementById("password").innerHTML = pwset;
 
   return pwset;
 
-
 }
-
-// 
